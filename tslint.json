@@ -1,0 +1,14 @@
+{
+    "extends": "tslint:all",
+    "rules": {
+        "quotemark": [true, "single"],
+        "max-classes-per-file": [true, 1, "exclude-class-expressions"],
+        "no-inferrable-types": false,
+        "newline-per-chained-call": false,
+        "no-redundant-jsdoc": false,
+        "file-name-casing": [true, "kebab-case"],
+        "max-line-length": [true, 140],
+        "no-unused-variable": false,
+        "no-null-keyword": false
+    }
+}
