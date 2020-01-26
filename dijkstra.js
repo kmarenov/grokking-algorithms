@@ -3,7 +3,7 @@ var _a, _b, _c, _d, _e;
 const graph = new Map();
 graph.set('start', new Map());
 (_a = graph.get('start')) === null || _a === void 0 ? void 0 : _a.set('a', 6);
-(_b = graph.get('start')) === null || _b === void 0 ? void 0 : _b.set('b', 6);
+(_b = graph.get('start')) === null || _b === void 0 ? void 0 : _b.set('b', 2);
 graph.set('a', new Map());
 (_c = graph.get('a')) === null || _c === void 0 ? void 0 : _c.set('fin', 1);
 graph.set('b', new Map());
@@ -31,7 +31,18 @@ function findLowestCostNode(costs) {
     return lowestCostNode;
 }
 let node = findLowestCostNode(costs);
+let i = 1;
 while (node !== null) {
+    console.log(`i = ${i++}`);
+    console.log('graph');
+    console.log(graph);
+    console.log('\n');
+    console.log('costs');
+    console.log(costs);
+    console.log('\n');
+    console.log('parents');
+    console.log(parents);
+    console.log('\n');
     let cost = costs.get(node);
     let neighbors = graph.get(node);
     if (cost === undefined || neighbors === undefined) {
@@ -52,5 +63,4 @@ while (node !== null) {
     processed.push(node);
     node = findLowestCostNode(costs);
 }
-console.log(costs, parents);
 //# sourceMappingURL=dijkstra.js.map

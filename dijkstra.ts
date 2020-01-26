@@ -1,7 +1,7 @@
 const graph: Map<string, Map<string, number>> = new Map();
 graph.set('start', new Map());
 graph.get('start')?.set('a', 6);
-graph.get('start')?.set('b', 6);
+graph.get('start')?.set('b', 2);
 graph.set('a', new Map());
 graph.get('a')?.set('fin', 1);
 graph.set('b', new Map());
@@ -36,8 +36,20 @@ function findLowestCostNode(costs: Map<string, number>): string | null {
 }
 
 let node = findLowestCostNode(costs);
+let i = 1;
 
 while (node !== null) {
+    console.log(`i = ${i++}`);
+    console.log('graph');
+    console.log(graph);
+    console.log('\n');
+    console.log('costs');
+    console.log(costs);
+    console.log('\n');
+    console.log('parents');
+    console.log(parents);
+    console.log('\n');
+
     let cost = costs.get(node);
     let neighbors = graph.get(node);
 
@@ -66,5 +78,3 @@ while (node !== null) {
 
     node = findLowestCostNode(costs);
 }
-
-console.log(costs, parents);
